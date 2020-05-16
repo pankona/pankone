@@ -1,0 +1,3 @@
+[submodule "hashira"]
+	path = hashira
+	url = https://github.com/pankona/hashira
