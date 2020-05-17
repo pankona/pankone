@@ -1,0 +1,18 @@
+version: '3'
+services:
+  router:
+    container_name: router
+    image: pankona/router
+    build:
+      context: .
+      dockerfile: ./config/router/Dockerfile
+    ports:
+      - "8080:80"
+  hashira-auth:
+    container_name: hashira-auth
+    image: pankona/hashira-auth
+    build:
+      context: .
+      dockerfile: ./config/hashira-auth/Dockerfile
+    ports:
+      - "8081:8081"
