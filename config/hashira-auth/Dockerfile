@@ -20,6 +20,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY --from=builder /src/cmd/hashira-auth/hashira-auth .
+ADD config/hashira-auth/secret.yaml .
 
 CMD ["./hashira-auth"]
 
