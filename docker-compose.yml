@@ -8,22 +8,6 @@ services:
       dockerfile: ./config/router/Dockerfile
     ports:
       - "8080:80"
-  hashira-auth:
-    container_name: hashira-auth
-    image: pankona/hashira-auth
-    build:
-      context: .
-      dockerfile: ./config/hashira-auth/Dockerfile
-    ports:
-      - "8081:8081"
-  hashira-api:
-    container_name: hashira-api
-    image: pankona/hashira-api
-    build:
-      context: .
-      dockerfile: ./config/hashira-api/Dockerfile
-    ports:
-      - "8082:8082"
   hashira-frontend:
     container_name: hashira-frontend
     image: pankona/hashira-frontend
@@ -31,4 +15,21 @@ services:
       context: .
       dockerfile: ./config/hashira-frontend/Dockerfile
     ports:
-      - "80:80"
+      - "8081:80"
+  hashira-auth:
+    container_name: hashira-auth
+    image: pankona/hashira-auth
+    build:
+      context: .
+      dockerfile: ./config/hashira-auth/Dockerfile
+    ports:
+      - "8082:8080"
+  hashira-api:
+    container_name: hashira-api
+    image: pankona/hashira-api
+    build:
+      context: .
+      dockerfile: ./config/hashira-api/Dockerfile
+    ports:
+      - "8083:8080"
+
